@@ -1,0 +1,35 @@
+name: Build unsigned iOS IPA
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    name: iPhone arm64 unsigned IPA
+    runs-on: macos-15
+    timeout-minutes: 60
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install JavaScript dependencies
+        run: npm ci
+
+      - name: Build and verify unsigned IPA
+        run: bash scripts/build-unsigned-ipa.sh
+
+      - name: Upload unsigned IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: pure-reader-unsigned-ipa
+          path: build/pure-reader-unsigned.ipa
+          if-no-files-found: error
+          retention-days: 14

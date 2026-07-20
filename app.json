@@ -1,0 +1,42 @@
+{
+  "expo": {
+    "name": "纯阅",
+    "slug": "pure-reader",
+    "version": "1.0.0",
+    "scheme": "purereader",
+    "orientation": "portrait",
+    "icon": "./assets/pure-reader-icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.purereader.app",
+      "buildNumber": "1",
+      "usesAppleSignIn": false,
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "用于访问你主动配置的局域网书源。",
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": true
+        }
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.purereader.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-sharing"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "pure-reader",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@expo/metro-runtime": "~57.0.6",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "css-select": "^7.0.0",
+    "expo": "~57.0.7",
+    "expo-document-picker": "~57.0.1",
+    "expo-file-system": "~57.0.1",
+    "expo-sharing": "~57.0.6",
+    "expo-status-bar": "~57.0.1",
+    "htmlparser2": "^12.0.0",
+    "jsonpath-plus": "^10.4.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.0",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-web": "^0.21.2"
+  },
+  "devDependencies": {
+    "@types/react": "~19.2.2",
+    "typescript": "~6.0.3",
+    "vitest": "^4.1.10"
+  },
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "build:ios-js": "expo export --platform ios --output-dir dist-ios"
+  },
+  "private": true
+}
