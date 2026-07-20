@@ -9,6 +9,9 @@ jobs:
     name: iPhone arm64 unsigned IPA
     runs-on: macos-15
     timeout-minutes: 60
+    env:
+      # Expo SDK 57's ExpoModulesJSI package requires Swift tools 6.2.
+      DEVELOPER_DIR: /Applications/Xcode_26.3.app/Contents/Developer
 
     steps:
       - name: Check out source
