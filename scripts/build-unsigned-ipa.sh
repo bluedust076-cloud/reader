@@ -21,6 +21,9 @@ if [[ ! -d node_modules ]]; then
   npm ci
 fi
 
+# expo-modules-jsi 57.0.3 needs an explicit Swift namespace with Swift 6.2.
+node scripts/patch-expo-modules-jsi.mjs
+
 # Generate a fresh native project so the IPA always matches app.json and package-lock.json.
 npx expo prebuild --platform ios --clean --no-install
 
@@ -90,4 +93,3 @@ echo "IPA_PATH=$OUTPUT_IPA"
 echo "APP_BUNDLE=$(basename "$APP_PATH")"
 echo "ARCHITECTURES=$(/usr/bin/lipo -info "$EXECUTABLE_PATH")"
 echo "SIGNING=unsigned (ready for enterprise re-signing)"
-
